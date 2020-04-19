@@ -1,6 +1,3 @@
-# elements-of-web-programming
-Repository for Elements of Web Programming Course at UT Austin
-
-Test
-
-Test1
+name: Charissa (Rissa) Jackson
+eid: cej727
+bitbucketid: rissajackson
