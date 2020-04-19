@@ -26,7 +26,7 @@ def add_pool():
 
 @app.route("/pools")
 def get_pools():
-    # Assignment 4: 
+    # Assignment 4:
     # Query the database to pull all the pools
     # Sample pool -- Delete this from final output.
     pool = {}
