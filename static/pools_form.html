@@ -33,12 +33,13 @@
         return false;
       }
 
-      if (isNaN(phone)) {
+      if (isNaN(phone) || phone.length != 10) {
           text = "Invalid Phone number. Has to be a 10 digit number without hyphens.";
           document.getElementById("error").innerHTML = text;
           console.log(text);
           return false;
       }
+
 
       if (!typeList.includes(type)) {
           text = "Invalid pool type. Has to be Neighborhood, University, or Community.";
