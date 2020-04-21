@@ -12,7 +12,7 @@ import re
 
 application = Flask(__name__)
 app = application
-all_pools = []
+
 
 def get_db_creds():
     db = os.environ.get("DB", None) or os.environ.get("database", None) or 'pools_db'
@@ -28,7 +28,7 @@ def create_table():
 
 
     try:
-        cur.execute('DROP TABLE pools')
+        #cur.execute('DROP TABLE pools')
         cur.execute(table_ddl)
         cur.cnx.commit()
     except mysql.connector.Error as err:
@@ -104,6 +104,7 @@ def add_pool():
     result=cur.fetchone()
     print(pool_name, repr(result[0]))
     if result[0] != 0:
+        print("I made it to here!")
         return render_template('pool_added.html')
     #error = validatePool(d2, d3, d4)
     #if error:
@@ -113,14 +114,10 @@ def add_pool():
     print("Returning from addPools")
     return render_template('pool_added.html')
 
-    # Insert into database.
-
-
-    return render_template('pool_added.html')
-
 
 @app.route("/pools")
 def get_pools():
+    all_pools = []
     # Assignment 4:
     # Query the database to pull all the pools
     # Sample pool -- Delete this from final output.
