@@ -120,7 +120,6 @@ def get_pools():
     all_pools = []
     # Assignment 4:
     # Query the database to pull all the pools
-    # Sample pool -- Delete this from final output.
     cur = getCursor()
     cur.execute("SELECT * FROM pools")
     results=cur.fetchall()
