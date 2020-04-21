@@ -15,31 +15,38 @@
 
   <script>
     // Assignment 4: Add validation for pool form data
+    console.log("I'm here!")
     function validateData() {
       console.log("entering validate data");
       var inputs = document.getElementById("pools_form").elements;
       var status = inputs["status"].value;
       var phone = inputs["phone"].value;
+      var type = inputs["pool_type"].value;
 
       var statusList = ["Closed", "Open", "In Renovation"]
+      var typeList = ["Neighborhood", "University", "Community"]
 
       if (!statusList.includes(status)) {
         text = "Invalid status. Has to be Closed, Open, or In Renovation.";
         document.getElementById("error").innerHTML = text;
         console.log("entering failed status");
         return false;
-      } //else {
-        //console.log("entering successful status")
-        //return true;
-      //}
-
+      }
 
       if (isNaN(phone)) {
           text = "Invalid Phone number. Has to be a 10 digit number without hyphens.";
           document.getElementById("error").innerHTML = text;
           console.log(text);
           return false;
+      }
+
+      if (!typeList.includes(type)) {
+          text = "Invalid pool type. Has to be Neighborhood, University, or Community.";
+          document.getElementById("error").innerHTML = text;
+          console.log("entering failed type");
+          return false;
       } else {
+          console.log("entering successful state")
           return true;
       }
     }
@@ -96,7 +103,7 @@
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
-    ></script>  
+    ></script>
 
   </body>
 </html>

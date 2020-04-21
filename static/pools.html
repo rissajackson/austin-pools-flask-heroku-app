@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 
 <script>
   var xmlhttp;
@@ -62,8 +62,9 @@
 
     headerRow = {}
     headerRow["Name"] = "Name"
-    headerRow["Timings"] = "Timings"
+    headerRow["Phone"] = "Phone"
     headerRow["Status"] = "Status"
+    headerRow["Type"] = "Type"
 
     createRow("thead")
     fontWeight = "bold"
@@ -89,12 +90,12 @@
     nameCol.appendChild(nameData);
     document.getElementById(rowId).appendChild(nameCol);
 
-    var timingCol = document.createElement("TD");
-    timingCol.style.fontWeight = fontWeight;
-    timingCol.class = "col px-md-5";
-    var timingData = document.createTextNode(data.Timings);
-    timingCol.appendChild(timingData);
-    document.getElementById(rowId).appendChild(timingCol);
+    var phoneCol = document.createElement("TD");
+    phoneCol.style.fontWeight = fontWeight;
+    phoneCol.class = "col px-md-5";
+    var phoneData = document.createTextNode(data.Phone);
+    phoneCol.appendChild(phoneData);
+    document.getElementById(rowId).appendChild(phoneCol);
 
     var statusCol = document.createElement("TD");
     statusCol.style.fontWeight = fontWeight;
@@ -102,6 +103,13 @@
     var statusData = document.createTextNode(data.Status);
     statusCol.appendChild(statusData);
     document.getElementById(rowId).appendChild(statusCol);
+
+    var typeCol = document.createElement("TD");
+    typeCol.style.fontWeight = fontWeight;
+    typeCol.class = "col px-md-5";
+    var typeData = document.createTextNode(data.Type);
+    typeCol.appendChild(typeData);
+    document.getElementById(rowId).appendChild(typeCol);
   }
 </script>
 
