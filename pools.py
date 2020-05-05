@@ -18,9 +18,6 @@ root = ET.fromstring(data.text)
 app = Flask(__name__)
 
 
-
-
-
 @app.route("/pools")
 def get_pools():
     all_pools = []
