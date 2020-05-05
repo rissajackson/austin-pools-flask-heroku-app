@@ -1,3 +1,4 @@
 Flask
 requests
-https://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-8.0.19.tar.gz
+gunicorn
+#https://dev.mysql.com/get/Downloads/Connector-Python/mysql-connector-python-8.0.19.tar.gz
