@@ -36,6 +36,7 @@ def get_pools():
             status = pool.find('status')
             if status is not None:
                 status = status.text
+            open_date = pool.find('open_date')
             if open_date is not None:
                 open_date = open_date.text
             weekday = pool.find('weekday')
