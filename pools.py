@@ -62,7 +62,7 @@ def pool_info_website():
 
 def run():
     app.debug = True
-    app.run(host='0.0.0.0')
+    app.run()
 
 if __name__ == "__main__":
     run()
