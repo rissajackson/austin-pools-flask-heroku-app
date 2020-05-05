@@ -6,9 +6,17 @@ import json
 from flask import request, abort
 from flask import Flask, render_template
 import re
+import xml.etree.ElementTree as ET
+
+source = "https://raw.githubusercontent.com/devdattakulkarni/elements-of-web-programming/master/data/austin-pool-timings.xml"
+
+data = requests.get(source)
+
+root = ET.fromstring(data.text)
 
 
 app = Flask(__name__)
+
 
 
 """
@@ -38,7 +46,7 @@ def add_pool():
     #cur.cnx.commit()
     print("Returning from addPools")
     return render_template('pool_added.html')
-    """
+"""
 
 
 @app.route("/pools")
@@ -54,13 +62,40 @@ def get_pools():
         poolDic = {'Name': pool[0], 'Status': pool[1], 'Phone': pool[2], 'Type': pool[3]}
         all_pools.append(poolDic)
         """
+    """
     pool = {}
     pool['Name'] = 'Barton Springs'
     pool['Type'] = 'Community'
     pool['Status'] = 'Open'
     pool['Weekday'] = '9-5'
     pool['Weekend'] = 'Closed'
-    all_pools.append(pool)
+    """
+# parses the xml file
+    for pool in root.findall('row'):
+        pool_name = ''
+        weekday = ''
+        pool_type = ''
+        weekday_closure = ''
+        status = ''
+        try:
+            pool_name = pool.find('pool_name').text
+            pool_type = pool.find('pool_type').text
+            status = pool.find('status')
+            if status is not None:
+                status = status.text
+            weekday = pool.find('weekday')
+            if weekday is not None:
+                weekday = weekday_closure.text
+            weekend = pool.find('weekend').text
+            if weekend is not None:
+                weekend = weekend.text
+
+
+        except AttributeError:
+            print(pool)
+            continue
+
+        all_pools.append({"name":pool_name, "weekend": weekend, "type": pool_type, "status": status, "weekday": weekday, "weekend": weekend})
     return json.dumps(all_pools)
 
 
