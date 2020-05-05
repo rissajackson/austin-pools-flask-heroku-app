@@ -93,6 +93,8 @@ def get_pools():
 
         except AttributeError:
             print(pool)
+            import traceback
+            traceback.print_exc()
             continue
 
         all_pools.append({"Name":pool_name, "Type": pool_type, "Status": status, "Weekday": weekday, "Weekend": weekend})
