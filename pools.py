@@ -95,7 +95,7 @@ def get_pools():
             print(pool)
             continue
 
-        all_pools.append({"name":pool_name, "type": pool_type, "status": status, "weekday": weekday, "weekend": weekend})
+        all_pools.append({"Name":pool_name, "Type": pool_type, "Status": status, "Weekday": weekday, "Weekend": weekend})
         return json.dumps(all_pools)
 
 
