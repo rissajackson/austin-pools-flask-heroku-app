@@ -49,9 +49,18 @@ def get_pools():
     #cur = getCursor()
     #cur.execute("SELECT * FROM pools")
     #results=cur.fetchall()
+    """
     for pool in results:
         poolDic = {'Name': pool[0], 'Status': pool[1], 'Phone': pool[2], 'Type': pool[3]}
         all_pools.append(poolDic)
+        """
+    pool = {}
+    pool['Name'] = 'Barton Springs'
+    pool['Type'] = 'Community'
+    pool['Status'] = 'Open'
+    pool['Weekday'] = '9-5'
+    pool['Weekend'] = 'Closed'
+    all_pools.append(pool)
     return json.dumps(all_pools)
 
 

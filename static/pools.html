@@ -62,9 +62,11 @@
 
     headerRow = {}
     headerRow["Name"] = "Name"
-    headerRow["Phone"] = "Phone"
-    headerRow["Status"] = "Status"
     headerRow["Type"] = "Type"
+    headerRow["Status"] = "Status"
+    headerRow["Weekday"] = "Weekday"
+    headerRow["Weekend"] = "Weekend"
+
 
     createRow("thead")
     fontWeight = "bold"
@@ -90,12 +92,12 @@
     nameCol.appendChild(nameData);
     document.getElementById(rowId).appendChild(nameCol);
 
-    var phoneCol = document.createElement("TD");
-    phoneCol.style.fontWeight = fontWeight;
-    phoneCol.class = "col px-md-5";
-    var phoneData = document.createTextNode(data.Phone);
-    phoneCol.appendChild(phoneData);
-    document.getElementById(rowId).appendChild(phoneCol);
+    var typeCol = document.createElement("TD");
+    typeCol.style.fontWeight = fontWeight;
+    typeCol.class = "col px-md-5";
+    var typeData = document.createTextNode(data.Type);
+    typeCol.appendChild(typeData);
+    document.getElementById(rowId).appendChild(typeCol);
 
     var statusCol = document.createElement("TD");
     statusCol.style.fontWeight = fontWeight;
@@ -104,12 +106,21 @@
     statusCol.appendChild(statusData);
     document.getElementById(rowId).appendChild(statusCol);
 
-    var typeCol = document.createElement("TD");
-    typeCol.style.fontWeight = fontWeight;
-    typeCol.class = "col px-md-5";
-    var typeData = document.createTextNode(data.Type);
-    typeCol.appendChild(typeData);
-    document.getElementById(rowId).appendChild(typeCol);
+    var weekdayCol = document.createElement("TD");
+    weekdayCol.style.fontWeight = fontWeight;
+    weekdayCol.class = "col px-md-5";
+    var weekdayData = document.createTextNode(data.Weekday);
+    weekdayCol.appendChild(weekdayData);
+    document.getElementById(rowId).appendChild(weekdayCol);
+
+    var weekendCol = document.createElement("TD");
+    weekendCol.style.fontWeight = fontWeight;
+    weekendCol.class = "col px-md-5";
+    var weekendData = document.createTextNode(data.Weekend);
+    weekendCol.appendChild(weekendData);
+    document.getElementById(rowId).appendChild(weekendCol);
+
+
   }
 </script>
 
