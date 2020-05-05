@@ -61,9 +61,10 @@
     thead.className = "thead-dark"
 
     headerRow = {}
-    headerRow["Name"] = "Name"
-    headerRow["Type"] = "Type"
+    headerRow["Pool_name"] = "Pool_name"
+    headerRow["Pool_type"] = "Pool_type"
     headerRow["Status"] = "Status"
+    headerRow["Open_date"] = "Open_date"
     headerRow["Weekday"] = "Weekday"
     headerRow["Weekend"] = "Weekend"
 
@@ -85,18 +86,18 @@
     emptyCol.scope = "row";
     document.getElementById(rowId).appendChild(emptyCol);
 
-    var nameCol = document.createElement("TD");
-    nameCol.style.fontWeight = fontWeight;
-    nameCol.class = "col px-md-5";
-    var nameData = document.createTextNode(data.Name);
-    nameCol.appendChild(nameData);
+    var pool_nameCol = document.createElement("TD");
+    pool_nameCol.style.fontWeight = fontWeight;
+    pool_nameCol.class = "col px-md-5";
+    var pool_nameData = document.createTextNode(data.Pool_name);
+    pool_nameCol.appendChild(pool_nameData);
     document.getElementById(rowId).appendChild(nameCol);
 
     var typeCol = document.createElement("TD");
-    typeCol.style.fontWeight = fontWeight;
-    typeCol.class = "col px-md-5";
-    var typeData = document.createTextNode(data.Type);
-    typeCol.appendChild(typeData);
+    pool_typeCol.style.fontWeight = fontWeight;
+    pool_typeCol.class = "col px-md-5";
+    var typeData = document.createTextNode(data.Pool_type);
+    pool_typeCol.appendChild(pool_typeData);
     document.getElementById(rowId).appendChild(typeCol);
 
     var statusCol = document.createElement("TD");
@@ -105,6 +106,13 @@
     var statusData = document.createTextNode(data.Status);
     statusCol.appendChild(statusData);
     document.getElementById(rowId).appendChild(statusCol);
+
+    var open_dateCol = document.createElement("TD");
+    open_dateCol.style.fontWeight = fontWeight;
+    open_dateCol.class = "col px-md-5";
+    var open_dateData = document.createTextNode(data.Open_date);
+    open_dateCol.appendChild(open_dateData);
+    document.getElementById(rowId).appendChild(open_dateCol);
 
     var weekdayCol = document.createElement("TD");
     weekdayCol.style.fontWeight = fontWeight;
