@@ -91,14 +91,14 @@
     pool_nameCol.class = "col px-md-5";
     var pool_nameData = document.createTextNode(data.Pool_name);
     pool_nameCol.appendChild(pool_nameData);
-    document.getElementById(rowId).appendChild(nameCol);
+    document.getElementById(rowId).appendChild(pool_nameCol);
 
-    var typeCol = document.createElement("TD");
+    var pool_typeCol = document.createElement("TD");
     pool_typeCol.style.fontWeight = fontWeight;
     pool_typeCol.class = "col px-md-5";
-    var typeData = document.createTextNode(data.Pool_type);
+    var pool_typeData = document.createTextNode(data.Pool_type);
     pool_typeCol.appendChild(pool_typeData);
-    document.getElementById(rowId).appendChild(typeCol);
+    document.getElementById(rowId).appendChild(pool_typeCol);
 
     var statusCol = document.createElement("TD");
     statusCol.style.fontWeight = fontWeight;
