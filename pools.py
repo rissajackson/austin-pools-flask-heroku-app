@@ -52,7 +52,7 @@ def get_pools():
             traceback.print_exc()
             continue
 
-        all_pools.append({"Pool_name":pool_name, "Pool_type": pool_type, "Status": status, "Open_date": open_date "Weekday": weekday, "Weekend": weekend})
+        all_pools.append({"Pool_name":pool_name, "Pool_type": pool_type, "Status": status, "Open_date": open_date, "Weekday": weekday, "Weekend": weekend})
     return json.dumps(all_pools)
 
 
