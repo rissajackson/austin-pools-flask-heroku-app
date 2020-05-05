@@ -11,7 +11,7 @@ import re
 app = Flask(__name__)
 
 
-
+"""
 @app.route("/static/add_pool", methods=['POST'])
 def add_pool():
 
@@ -38,6 +38,7 @@ def add_pool():
     #cur.cnx.commit()
     print("Returning from addPools")
     return render_template('pool_added.html')
+    """
 
 
 @app.route("/pools")
