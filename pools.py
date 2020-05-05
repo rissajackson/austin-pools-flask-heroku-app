@@ -8,8 +8,7 @@ from flask import Flask, render_template
 import re
 
 
-application = Flask(__name__)
-app = application
+app = Flask(__name__)
 
 
 
@@ -59,10 +58,6 @@ def get_pools():
 def pool_info_website():
     return render_template('index.html')
 
-
-def run():
+if __name__ == "__main__":
     app.debug = True
     app.run()
-
-if __name__ == "__main__":
-    run()
