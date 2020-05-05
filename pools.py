@@ -85,7 +85,7 @@ def get_pools():
                 status = status.text
             weekday = pool.find('weekday')
             if weekday is not None:
-                weekday = weekday_closure.text
+                weekday = weekday.text
             weekend = pool.find('weekend').text
             if weekend is not None:
                 weekend = weekend.text
