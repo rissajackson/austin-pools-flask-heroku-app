@@ -27,6 +27,7 @@ def get_pools():
         pool_name = ''
         pool_type = ''
         status = ''
+        open_date = ''
         weekday = ''
         weekend = ''
         try:
@@ -35,6 +36,8 @@ def get_pools():
             status = pool.find('status')
             if status is not None:
                 status = status.text
+            if open_date is not None:
+                open_date = open_date.text
             weekday = pool.find('weekday')
             if weekday is not None:
                 weekday = weekday.text
@@ -49,7 +52,7 @@ def get_pools():
             traceback.print_exc()
             continue
 
-        all_pools.append({"Name":pool_name, "Type": pool_type, "Status": status, "Weekday": weekday, "Weekend": weekend})
+        all_pools.append({"Pool_name":pool_name, "Pool_type": pool_type, "Status": status, "Open_date": open_date "Weekday": weekday, "Weekend": weekend})
     return json.dumps(all_pools)
 
 
