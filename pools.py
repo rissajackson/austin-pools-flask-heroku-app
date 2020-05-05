@@ -73,10 +73,10 @@ def get_pools():
 # parses the xml file
     for pool in root.findall('row'):
         pool_name = ''
-        weekday = ''
         pool_type = ''
-        weekday_closure = ''
         status = ''
+        weekday = ''
+        weekend = ''
         try:
             pool_name = pool.find('pool_name').text
             pool_type = pool.find('pool_type').text
