@@ -5,8 +5,6 @@ import time
 import json
 from flask import request, abort
 from flask import Flask, render_template
-import mysql.connector
-from mysql.connector import errorcode
 import re
 
 
@@ -62,6 +60,9 @@ def pool_info_website():
     return render_template('index.html')
 
 
-if __name__ == "__main__":
+def run()
     app.debug = True
     app.run(host='0.0.0.0')
+
+if __name__ == "__main__":
+    run()
