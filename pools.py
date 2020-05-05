@@ -96,7 +96,7 @@ def get_pools():
             continue
 
         all_pools.append({"name":pool_name, "weekend": weekend, "type": pool_type, "status": status, "weekday": weekday, "weekend": weekend})
-    return json.dumps(all_pools)
+        return json.dumps(all_pools)
 
 
 @app.route("/")
