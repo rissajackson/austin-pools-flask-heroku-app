@@ -1,4 +1,1 @@
-name: Charissa (Rissa) Jackson
-eid: cej727
-bitbucketid: rissajackson
-application url: https://nameless-lake-31324.herokuapp.com/
+This is a Flask web application for Austin pools' that is deployable to Heroku and has a REST API.
